@@ -25,7 +25,7 @@ public class Controller {
             Conexion conexion1 = new Conexion();
             Connection cnx = conexion1.obtenerConexion();
 
-            String query = "SELECT usuario, pass FROM usuarios.user WHERE usuario=? and estado = \'ACTIVO\'";
+            String query = "SELECT usuario, pass FROM usuarios.user WHERE usuario= BINARY ? and estado = \'ACTIVO\'";
             PreparedStatement stmt = cnx.prepareStatement(query);
             stmt.setString(1, usuarioVentana);
 
